@@ -1,7 +1,11 @@
-import "./App.css";
+import "tailwindcss";
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <p className="text-xl font-bold text-blue-500">Loading app...</p>
+    </>
+  );
 }
 
 export default App;
