@@ -1,0 +1,29 @@
+# .NET Core ignores
+[Bb]in/
+[Oo]bj/
+.vs/
+.vscode/
+appsettings*.json # Be cautious - only ignore if they contain secrets
+publish/
+*.user
+*.suo
+*.ncb
+*.opensdf
+*.sdf
+*.cache
+*.log
+*.pid
+*.pdb
+*.dll
+*.exe
+
+# Node.js/React ignores
+node_modules/
+build/
+dist/
+.env # Environment variables file
+.parcel-cache
+
+# OS temporary files
+.DS_Store
+Thumbs.db
