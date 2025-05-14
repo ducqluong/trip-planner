@@ -1,10 +1,13 @@
-import RegistrationForm from "./components/Auth/RegistrationForm";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import RegistrationPage from "./pages/RegistrationPage";
 
 function App() {
   return (
-    <>
-      <RegistrationForm />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<RegistrationPage />} />
+      </Routes>
+    </Router>
   );
 }
 

@@ -1,9 +1,9 @@
 import { useForm } from "react-hook-form";
+import InputField from "../common/InputField";
 
 type Inputs = {
   email: string;
   password: string;
-  confirmPassword: string;
 };
 
 export default function RegistrationForm() {
@@ -17,32 +17,34 @@ export default function RegistrationForm() {
   };
 
   return (
-    <form className="flex-col" onSubmit={handleSubmit(onSubmit)}>
-      <div>
-        <label>Email</label>
-        <input type="email" {...register("email", { required: true })} />
-        {errors.email && <span>This field is required</span>}
-      </div>
-
-      <div>
-        <label>Password</label>
-        <input
-          type="password"
-          {...register("password", { required: true })}
+    <div>
+      <h1 className="text-2xl font-bold mb-4">CoordiTrip</h1>
+      <form
+        className="flex-col bg-yellow-200"
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        <InputField
+          label="Email"
+          type="email"
+          name="email"
+          register={register}
+          error={errors.email}
         />
-        {errors.password && <span>This field is required</span>}
-      </div>
-
-      <div>
-        <label>Confirm Password</label>
-        <input
+        <InputField
+          label="Password"
           type="password"
-          {...register("confirmPassword", { required: true })}
+          name="password"
+          register={register}
+          error={errors.password}
         />
-        {errors.confirmPassword && <span>This field is required</span>}
-      </div>
 
-      <button type="submit">Register</button>
-    </form>
+        <button
+          className="bg-blue-500 text-white py-2 px-4 rounded"
+          type="submit"
+        >
+          Register
+        </button>
+      </form>
+    </div>
   );
 }
