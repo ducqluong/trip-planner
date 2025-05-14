@@ -17,7 +17,7 @@ export default function RegistrationForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form className="flex-col" onSubmit={handleSubmit(onSubmit)}>
       <div>
         <label>Email</label>
         <input type="email" {...register("email", { required: true })} />

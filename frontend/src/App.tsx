@@ -1,4 +1,3 @@
-import "tailwindcss";
 import RegistrationForm from "./components/Auth/RegistrationForm";
 
 function App() {
