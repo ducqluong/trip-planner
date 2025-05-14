@@ -1,7 +1,12 @@
 import "tailwindcss";
+import RegistrationForm from "./components/Auth/RegistrationForm";
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <RegistrationForm />
+    </>
+  );
 }
 
 export default App;
