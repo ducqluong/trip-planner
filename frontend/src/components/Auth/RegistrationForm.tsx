@@ -1,18 +1,48 @@
 import { useForm } from "react-hook-form";
 
 type Inputs = {
-  firstName: string;
-  lastName: string;
   email: string;
   password: string;
   confirmPassword: string;
 };
 
-function RegistrationForm() {
+export default function RegistrationForm() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Inputs>();
+  const onSubmit = (data: Inputs) => {
+    console.log(data);
+  };
+
   return (
-    <div>
-      <h1>Registration Form</h1>
-    </div>
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div>
+        <label>Email</label>
+        <input type="email" {...register("email", { required: true })} />
+        {errors.email && <span>This field is required</span>}
+      </div>
+
+      <div>
+        <label>Password</label>
+        <input
+          type="password"
+          {...register("password", { required: true })}
+        />
+        {errors.password && <span>This field is required</span>}
+      </div>
+
+      <div>
+        <label>Confirm Password</label>
+        <input
+          type="password"
+          {...register("confirmPassword", { required: true })}
+        />
+        {errors.confirmPassword && <span>This field is required</span>}
+      </div>
+
+      <button type="submit">Register</button>
+    </form>
   );
 }
-export default RegistrationForm;
