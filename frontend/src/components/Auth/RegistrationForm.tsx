@@ -14,6 +14,7 @@ export default function RegistrationForm() {
     handleSubmit,
     formState: { errors },
   } = useForm<Inputs>();
+
   const onSubmit = (data: Inputs) => {
     console.log(data);
   };
